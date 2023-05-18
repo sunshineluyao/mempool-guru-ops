@@ -27,6 +27,7 @@ We built a dashboard at http://mempool.guru.
 
 First, you need a full node set up using [eth-docker](https://eth-docker.net/).
 
+(process the code under ./home/user directory)
 ```
 git clone https://github.com/eth-educators/eth-docker
 cd eth-docker
@@ -52,14 +53,14 @@ It will take some time to sync. You can check progress with `docker logs -f eth-
 > 🚨 Important: read this carefully.
 
 Then, you just need to spin up the docker service defined in [docker-compose.yml](docker-compose.yml) following these steps:
-
-1. Clone this repo & go to the root directory
+(process the code under ./home/user directory)
+1. Clone this repo & go to the folder of the repo. 
 2. Use `cp .env-template .env` to create an environment file named `.env`. This file will be used by docker to populate environment variables in `docker-compose.yml`.
-3. Configure your node by editing `.env`:
+3. Configure your node by editing `.env`: (under the mempool-guru-ops folder: can only be viewed using `ls -la`, not `ls`.)
     - 🚨 change `MONITOR_ID` to a **unique ID for your node**, preferably something readable.
     - 🚨 Replace `POSTGRES_DB_URL` with a DB credential provided by the admin. It should look like `POSTGRES_DB_URL=postgresql://user:passwd@IP:port/db_name`. **Please keep the credential secret.**
     - Other environment variables **must** remain as is.
-6. Start the service by `docker-compose up -d`.
+6. Start the service by `sudo docker-compose up -d`.
 
 This will start three docker containers
 
